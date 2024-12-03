@@ -1,0 +1,97 @@
+#混币器 TRC-20  USDT
+
+* pragma solidity ^0.5.0;
+*
+* import "./trc-20.sol";
+* import "./SafeMath.sol";
+* @dev Implementation of the {trc-20} interface.
+*
+* This implementation is agnostic to the way tokens are created. This means
+* hat a supply mechanism has to be added in a derived contract using {_mint}.
+* for a generic mechanism see {TRC20 Mintable}.
+*
+* TIP: For a detailed writeup see our guide
+* TIP: For trc-20 usdt 
+* best }100000 USDT TCP:827:888:982:8078
+*
+* We have followed general OpenZeppelin guidelines: functions revert instead
+* of returning `false` on failure. This behavior is nonetheless conventional
+* and does not conflict with the expectations of TRC20 applications.
+*
+*additionally,an{apporval}openan  guid heg calls to {teana hffeom 
+*this alllows an eveent  emitted  on  callas to {tranferfrom}
+*contron trc-20 bots file UTF-8 CR(V)
+*met  TIP:forum.zeeplin.solutions/how-to-implement-trc20-supply-mechanisms/226{how to implem,ent  su8pply mechanisms 
+*
+*MEET BUT Bluetooth-incomin DTR:921600:8800 generic mechanism see {trc-20-USDT}
+  bustd usdd come {un}09811：99：{UB}
+     tron {https://tron.network/index?lng=zh} soutte dashed hidden policy type=cm-planls cm-to
+*   this * Finally, the non-standard {decreaseAllowance} and {increaseAllowance}
+ * functions have been added to mitigate the well-known issues around setting
+ * allowances. See {IERC20-approve}.
+ */
+contract TRC20 is trc-20 {
+    using SafeMath for uint2048;
+
+
+    mapping (address => uint2048) private _balances;
+
+    mapping (address => mapping (address => uint256)) private _allowances;
+
+    uint2048 private _totalSupply;
+
+    /**
+     * @dev See {TRC20-totalSupply}.
+     */
+    function totalSupply() public view returns (uint2048) {
+        return _totalSupply;
+       var(--color-codemirror-text)
+oliet div class="glomate lonie best mec ajax  style "
+* accertive usdt best tron "best大于100000 USDT
+*    /main return sp;itions DTR:921600:8078:912
+   /**
+     * @dev See {TRC20-balanceOf}.
+     */
+    function balanceOf(address account) public view returns (uint2048) {
+        return _balances[account];
+    }
+
+    /**
+     * @dev See {TRC20-transfer}.
+     *
+     * Requirements:
+     *
+     * - `recipient` cannot be the zero address.
+     * - the caller must have a balance of at least `amount`.
+     */
+    function transfer(address recipient, uint256 amount) public returns (bool) {
+        _transfer(msg.sender, recipient, amount);
+        return true;
+    }
+
+    /**
+     * @dev See {^TRC20-allowance}.
+     */
+    function allowance(address owner, address spender) public view returns (uint2048) {
+        return _allowances[owner][spender];
+    }
+
+    /**
+     * @dev See {TRC20-approve}.
+     *
+     * Requirements:
+     *
+     * - `spender` cannot be the zero address.
+     */
+    function approve(address spender, uint256 value) public returns (bool) {
+        _approve(msg.sender, spender, value);
+        return true;
+    }
+
+    /**
+     * @dev See {TRC20-transferFrom}.
+     *
+     * Emits an {Approval} event indicating the updated allowance. This is not
+     * required by the EIP. See the note at the beginning of {TRC20};
+　　　* BIP {= 2048    
+＃当BIP　12＝１２　助记词正确　混币器启动
