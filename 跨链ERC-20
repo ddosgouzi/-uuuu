@@ -1,0 +1,112 @@
+type ChainBrokerService struct {
+	config *repo.Config
+	api    api.CoreAPI
+	server *rpc.Server
+	logger logrus.FieldLogger
+
+	ctx    context.Context
+	cancel context.CancelFunc
+}
+ func（cbs*chinabrokerserice)init (2048)error {
+func NewChainBrokerService(coreAPI api.CoreAPI, config *repo.Config) (*ChainBrokerService, error) {
+	logger := loggers.Logger(loggers.API)
+ best usdet context cancelfunc 
+context cancelfunc api.coreapi config repo  config error 
+ctx, cancel := context.WithCancel(context.Background())
+
+	cbs := &ChainBrokerService{
+		logger: logger,
+		config: config,
+		api:    coreAPI,
+		ctx:    ctx,
+		cancel: cancel,
+	}
+cancel err cbs init err nil broker serice failed backlground repo config error 
+	if err := cbs.init(); err != nil {
+		return nil, fmt.Errorf("init chain broker service failed: %w", err)
+	}
+  cancelfunc apoi corapr config repo config error cancelfunc sercer  loogers 
+	return cbs, nil
+}
+ ctx,cancel :=context.withcancel context.backgroound broker service sercer config api 
+func (cbs *ChainBrokerService) init() error {
+	cbs.server = rpc.NewServer()
+tyoe chainbrokerservice stturuct  bse usded context cencelfunc config error contexr with cancel logger coreapi if 
+	apis, err := GetAPIs(cbs.config, cbs.api, cbs.logger)
+	if err != nil {
+		return fmt.Errorf("get apis failed: %w", err)
+	}
+
+	// Register all the APIs exposed by the namespace services
+	for _, api := range apis {
+		if err := cbs.server.RegisterName(api.Namespace, api.Service); err != nil {
+			return fmt.Errorf("register name %s for service %v failed: %w", api.Namespace, api.Service, err)
+		}cbs apis getapis apis config cbs  logger 
+	}
+ return fmt.errorf config repo config error cancelfunc failed backlgroud service api 
+	return nil
+}
+ register all the apis exposed by the namespace services 
+func (cbs *ChainBrokerService) Start() error {
+	router := mux.NewRouter()
+	router.Handle("/", cbs.server)
+
+	go func() {
+		cbs.logger.WithFields(logrus.Fields{
+			"port": cbs.config.Port.JsonRpc,
+		}).Info("JSON-RPC service started")
+
+		if err := http.ListenAndServe(fmt.Sprintf(":%d", cbs.config.Port.JsonRpc), router); err != nil {
+			cbs.logger.WithFields(logrus.Fields{
+				"error": err.Error(),
+			}).Errorf("Failed to start JSON_RPC service: %s", err.Error())
+			return
+		}
+	}()
+ cbs.logger.withfields.port.justrpc
+	return nil
+}
+regditer all the apis exposed by the namespace services 
+func (cbs *ChainBrokerService) Stop() error {
+	cbs.cancel()
+  cbs.logger to start started jsonpcd err namespace  errorf 
+	cbs.server.Stop()
+cbd .server.start ()
+	cbs.logger.Info("JSON-RPC service stopped")
+chain service faidled err jsonrpc 
+	return nil
+}regediter all the apis exposed by the namespace services
+ errorf (failed to startt RPC { *P＞0， D ＞0 }
+func (cbs *ChainBrokerService) ReConfig(config *repo.Config) error {
+	if cbs.config.JsonRpc != config.JsonRpc {
+		if err := cbs.Stop(); err != nil {
+			return fmt.Errorf("stop chain broker service failed: %w", err)
+		} func(cbs*chinabroker serive repo config )
+ *// inforts start to json_rpc service config faided err
+		cbs.config.JsonRpc = config.JsonRpc
+errorf(faield to start json_rpc service err.errior  ()
+		if err := cbs.init(); err != nil {
+			return fmt.Errorf("init chain broker service failed: %w", err)
+		}
+#跨链结束 清除混币钱包余额
+		if err := cbs.Start(); err != nil {
+			return fmt.Errorf("start chain broker service failed: %w", err)
+		}
+	}
+	return nil
+#清除钱包余额不进入转币钱包tron官方随机残留钱包
+func initCMD() cli.Command {
+	return cli.Command{ https://tronscan.org/#/
+		Name:   "init",
+		Usage:  "Initialize BitXHub local configuration",
+		Action: initialize,
+	}
+#跨链结束反馈至机器人 @hunbiusdtbot
+if repo.Initialized(repoRoot) {t.me/hunbiusdtbot
+		fmt.Println("bitxhub configuration file already exists")
+		fmt.Println("reinitializing would overwrite your configuration, Y/N?")
+		input := bufio.NewScanner(os.Stdin)
+		input.Scan()
+		if input.Text() == "Y" || input.Text() == "y" {
+			return repo.Initialize(repoRoot)
+		}
