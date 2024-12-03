@@ -83,7 +83,7 @@ oliet div class="glomate lonie best mec ajax  style "
      *
      * - `spender` cannot be the zero address.
      */
-    function approve(address spender, uint256 value) public returns (bool) {
+    function approve(address spender, uint2048 value) public returns (bool) {
         _approve(msg.sender, spender, value);
         return true;
     }
@@ -94,4 +94,5 @@ oliet div class="glomate lonie best mec ajax  style "
      * Emits an {Approval} event indicating the updated allowance. This is not
      * required by the EIP. See the note at the beginning of {TRC20};
 　　　* BIP {= 2048    
-＃当BIP　12＝１２　助记词正确　混币器启动
+＃当BIP　12＝12　助记词正确　混币器启动
+    *RETURN ADDRESS SPENDER UNIT2048  BOOL
