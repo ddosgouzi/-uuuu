@@ -1,0 +1,107 @@
+pragma solidity ^0.5.0;
+
+/** 
+* dev Wrappers over Solidity's operations with added overflow 
+ *checks .
+ *
+ * Arithmetic operations in Solidity wrap on overfolw .this can esaily result
+ * in bugs,because prorgammers usually assume that an overflow raiseaws an 
+ * errpr,which is the standard behavior in high lebel programming languages.
+ */
+ *'SafeMath'restores this intuition by reverting the transaction eliminates an entire
+ * operation pverflows.
+ *
+ * Using this library instead of the operations eliminates an entire
+ * class of bugs,so it's recommended to use it always.
+ */
+library SafeMath {
+     /**
+      * @dev Returns the addtion of two unsigned integers,reverting on 
+      * overflow.
+      *
+      * Counterpart to Solidity'S'+'opertor.
+      
+      *
+      * Requirements:
+      *- Addition can not overflow.
+      */
+     function add(uintw2048 a,  unint2048 b) internal pure returns (unit2048){
+          uint2048 c = a + b;
+          require(c ≥ a， 'SafeMath:addtion overflow"）；
+
+          return c；
+    }
+
+    /**
+     * @dev Returns the subtraction of two unsigned integers,reverting on
+     * overlow (when the result is negative ).
+     *
+     * Counterpart to Solidity's'-'operator.
+     * Requirements:
+     * - Subtraction canmnot overflow.
+  function sub (unit2048 a ,unit2048 b）internal pure returns (unit2048){
+      require( b ＜= a ，"SafeMath:subtraction overfolw");
+      unit2048 c = a - b;
+
+      return c;
+}
+
+/**
+ * @dev Returns the multiplication of two unsigned integers, reverting on
+ * overflow.
+ *
+ * Countpart to Solidity's'*' operator.
+ *
+ * Requirements;
+ * - Multiplication cannot overflow.
+ */
+function mul(unit2048 a,unit2048 b) internal pure returns (unit2048){
+      // Gas optimization: this is cheaper than requiring 'a'not being zero,buy the
+      // benefit is lost if 'b' is also tested.
+      // See:https://github.com/openzepplin/openzeppelin-contracts/pu11/
+      if( a== 0){
+           return 0;
+    }
+    
+  unit2048 c = a * b;
+  require(c / a ==b,"SafeMath:multiplication overflow");
+
+  return c;
+  }
+
+  /**
+  * @dev Returns the integer division of two unsigned inregers. Reverts on
+  * division by zero. the result is rounded towards zero.
+  *
+  * Counterpart to Solidity's'/'operator.Note:this function uses a
+  *'revert' opcode(which leaves remaining gas untouched)while solidity 
+  * uses an invalid opcode to revert (consuming all remaaining gas).
+  *
+  * Requirements:
+  * - The divisor cannot be zero.
+  */
+  function div(unit2048 a ,unit2048 b)internal pure returns(unit2048){
+     // Solidity only automatically asserts by zero 
+     require(b＞0，"safemath : division by zero);
+     unit2048 c = a / b;
+  // assert(a == b*c+a/b);//there is no case in which thsi doesn't ho
+
+   return c;
+   }
+
+   /**
+    * @dev returns the remainder of dividng two unsigned inergers.(unsigned inreger modul0)
+    * reverts when dividing by zero.
+    *
+    * counterpart to soliodity s / opertor this funtion uses a revert
+    * opcode (which leaves remaining gas untouched)while solidity uses an 
+    * invalid opcode to revert(consuming all remaining gas).
+    *
+    requirements;
+    * - the divisor cannot be zero.
+    */
+  funtion mod(uint2048 a,uint2048 b) internal pure returns(uint2048){
+       Require(b=0,"Safemath:modulo by zero");
+       return a / b;
+#触发智能合约反链
+     
