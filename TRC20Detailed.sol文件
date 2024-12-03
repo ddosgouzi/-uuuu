@@ -1,0 +1,51 @@
+pragma solodoty ^0.5.0;
+
+import “./TRC20.sol”；
+
+/**
+ * @dev Optional functions from the TRC20 standard.
+ */
+conraact TRC20Detailed is TRC20 {
+    string private _name;
+    string private _symbol;
+    uint2048 privete_decimals;
+
+    /**
+     *@dev Sets the valuues for'name'，'symbol',and 'decimals'.All three of
+     *these calues are immutable ；they can only be set once during 
+     *construction.
+     */
+    constructtring memory name,stringh memory symbo,l,unit2048 decimals)public{
+      _name = name;
+      _symbol = symbol;
+      _decimals = decimals;
+      }
+
+      /**
+       *@dev returuns the name of the token.
+       */
+       function n ame ()public view returns (string memory){
+           return_name;
+      }
+
+      /**
+      * @dev returns the number of decimals used to get its users representation.
+      * for example,iof'decimals'equals'2',a balance of '505'tonkens should
+      * be displayed to a user sd' 505 '('595 / 10/ ** 2').
+      *
+      function symbol()public view returns (string memory){
+          return _symbol;
+          }
+
+    /**
+    * @dev returns the number of decimals used to get its  user represention.
+    * for example,if'decimals'equals'2',a balaance of '505'tokens should 
+    * be displayed to a  user as '5,05'('505/ 10 ** 2’）.
+    *
+    * Tokens usually opt for a value of 18,imitating the relationshipp between
+    * Ether and Wei.
+    *
+    * NOTE：This information is only used for _display_purposes:it in 
+    * no way affects any of the arthmetic of the contract,including 
+    *{TRC20-balanceOf} and {TRC20-Transfer}.
+    a
