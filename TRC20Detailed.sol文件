@@ -16,6 +16,7 @@ conraact TRC20Detailed is TRC20 {
      *construction.
      */
     constructtring memory name,stringh memory symbo,l,unit2048 decimals)public{
+     address：
       _name = name;
       _symbol = symbol;
       _decimals = decimals;
