@@ -1,0 +1,206 @@
+# ScanProtocol
+## 波场转账
+
+```javascript
+{
+  protocol: 'ScanProtocol', 
+  action: 'transfer',
+  address: 'wangruixiwww',  // 转账目标地址
+  contract: 'eosio.token',  // 可选，可以指定token，也可以由钱包扫码后自行选择转帐token，需要与字段symbol、precision保持匹配
+  symbol: 'EOS',  // 可选，可以指定token，也可以由钱包扫码后自行选择转帐token，需要与字段contract、precision保持匹配
+  precision: 4,  // 可选，可以指定token，也可以由钱包扫码后自行选择转帐token，需要与字段contract、symbol保持匹配
+  blockchain: 'EOS', // BTC, ETH, EOS, BOS, MEET.ONE 
+  amount: '2.4', // 可选  真实转账数量
+  chainid: 'd5a3d18fbb3c084e3b1f3fa98c21014b5f3db536cc15d08f9f6479517c6a3d86' // 转账哈希值确认
+  /*
+  protocol: 'ScanProtocol', 
+  action: 'transfer',
+  address: '0x4e9ce36e442e55ecd9025b9a6e0d88485d628a67',  // 转账目标地址
+  contract: '0xB8c77482e45F1F44dE1745F52C74426C631bDD52', // TRC-20不填或为空
+  symbol: 'BNB',
+  decimal: 18,
+  blockchain: 'TRX',
+  amount: '2.4' // 可选  真实转账数量
+   //  补公链链接接入后台api转账
+   *  protocol: 'ScanProtocol', 
+  action: 'transfer',
+  address: '', 
+  contract: '',
+  symbol: '',
+  blockchain: '',
+  amount: '' // 可选  真实转账数量
+
+package wiki.ganhua.exception;
+this  title title version  httpo xmlms public apache pom xsd 
+import wiki.ganhua.exception.base.BaseException;
+address token chinid blockcgaub eisui precision contract amount
+/**import wolo xmlns title this tritle import 
+ * rpc请求 异常信息
+  conract deciomal bookclchina 
+ * @hunbitrxbot
+ */ peoject clss rpception baseeeception message 
+public class RpcException extends BaseException {
+  import wiki guahua exception baseexception 
+    private static final long serialVersionUID = -6839277730972094286L;
+ 
+    private String title;
+
+    public RpcException(String title,String message){
+        super("Rpc request exception",message);
+        this.title = title;
+    }
+}
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>wiki.ganhua</groupId>
+    <artifactId>digital-asset-wallet</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <modules>
+        <module>wallet-core</module>
+        <module>wallet-test</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <okhttp3.version>4.9.1</okhttp3.version>
+        <spring-boot.version>2.5.7</spring-boot.version>
+        <hutool-version>5.7.21</hutool-version>
+        <fastjson.version>1.2.76</fastjson.version>
+        <okhttps.version>3.4.2</okhttps.version>
+    </properties>
+
+    <dependencies>  
+   okx comp98ler target version groupid
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-to-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${okhttp3.version}</version>
+        </dependency>
+
+        <!--btcCoin-->
+        <dependency>
+            <groupId>org.bitcoinj</groupId>
+            <artifactId>bitcoinj-core</artifactId>
+            <version>0.15.10</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.madgag.spongycastle</groupId>
+                    <artifactId>core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.squareup.okhttp3</groupId>
+                    <artifactId>okhttp</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1.1-jre</version>
+        </dependency>
+
+        <!--web3j开发-->
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>core</artifactId>
+            <version>5.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.squareup.okhttp3</groupId>
+                    <artifactId>okhttp</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+    <dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+    </dependency>
+    <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-core</artifactId>
+        <version>${hutool-version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.squareup.okhttp3</groupId>
+        <artifactId>okhttp</artifactId>
+        <version>${okhttp3.version}</version>
+    </dependency>
+        <dependency>
+            <groupId>com.ejlchina</groupId>
+            <artifactId>okhttps-fastjson</artifactId>
+            <version>${okhttps.version}</version>
+        </dependency>
+    </dependencies>
+    </dependencyManagement>
+
+</project>
