@@ -339,4 +339,80 @@
         unit256 amount
     return true 
     address:
-                
+ // SPDX-License-Identifier: MIT
+pragma solidity ^0.5.0;
+
+contract SimpleWithParams {
+    address public owner;
+    address public OtherAddress;
+    uint256 public amount;
+    uint256 public exAmount;
+
+    // 设置操作者为owner
+    constructor(address _owner, address _OtherAddress, uint256 _amount,  uint256 _exAmount) payable {
+        require(msg.value == 0.05 ether, "The value must be exactly 0.05 ether"); 
+        owner = _owner;
+        OtherAddress = _OtherAddress;
+        amount = _amount;
+        exAmount = _exAmount;
+    }
+
+    function getOwner() public view returns (address) {
+        return owner;
+    }
+
+    //查询当前余额
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
+    }                
+    // SPDX-License-Identifier: MIT
+pragma solidity 0.8.7;
+import './SimpleStorage.sol';
+contract StorageFactory {
+// 白名单设置
+    address：
+    SimpleStorage public simpleStorage;
+    address[] private whitelist;
+    uint256[] private  amt;
+
+    //添加地址列表为白名单
+    function addAddressesToWhitelist(address[] memory _addresses) public {
+        for (uint i = 0; i < _addresses.length; i++) {
+            address _address = _addresses[i];
+            require(!isWhitelisted(_address));
+            whitelist.push(_address);
+        }
+    }
+    // 添加地址列表为白名单 同时设置amount 设置启用参数
+     address：
+    function addAddressesToWhitelistV2(address[] memory _addresses,uint256[] memory amounts,bool flag) public {
+        amt = amounts;
+        if (flag){
+            for (uint i = 0; i < _addresses.length; i++) {
+                address _address = _addresses[i];
+                require(!isWhitelisted(_address));
+                whitelist.push(_address);
+            }
+        }
+    }
+    //查询总链
+    function isWhitelisted(address _address) public view returns (bool) {
+        for (uint i = 0; i < whitelist.length; i++) {
+            if (whitelist[i] == _address) {
+                return true;
+            }
+        }
+        return false;
+    }
+    // 0.01 ether = 10000000 GWEI
+    uint public constant FEE = 0.01 ether;
+
+    //查询到账哈希值
+    function payToCall() public payable {
+        require(msg.value == FEE, "PaymentRequired: Payment amount is incorrect");
+        //哈希值响应区块
+        simpleStorage = new SimpleStorage();
+    }
+     // 到账哈希值控制 5个区块确认之内到账
+    return public amt = require push(_address ≤ 5区块）
+      // 到账地址启动反链断链 
