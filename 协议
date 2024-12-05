@@ -1,0 +1,1014 @@
+<?php
+require('../vendor/autoload.php');
+
+use TronTool\TronKit;
+use TronTool\TronApi;
+use TronTool\Credential;
+
+$fromKey = '8D9142B97B38F992B4ADF9FB3D0DD527B1F47BE113C6D0B5C32A0571EF1E7B5F';
+$credential = Credential::fromPrivateKey($fromKey);
+$from = $credential->address()->base58();
+echo 'from address => ' . $from . PHP_EOL;
+
+$kit = new TronKit(TronApi::testNet(),$credential);
+
+$contractAddress = 'TS2Hzo6KpAc8Ym2nGb3idpMtUpM2GiK2gL';
+echo 'contract address => ' . $contractAddress . PHP_EOL;
+$inst = $kit->trc20($contractAddress);
+
+function query(){
+  global $inst,$from;
+  
+  echo 'query trc20 token info...' . PHP_EOL;
+  
+  $balance = $inst->balanceOf($from);
+  echo 'balance => ' . $balance . PHP_EOL;
+  
+  $supply = $inst->totalSupply();
+  echo 'total supply => ' . $supply . PHP_EOL;
+  
+  $name = $inst->name();
+  echo 'name => ' . $name . PHP_EOL;
+  
+  $symbol = $inst->symbol();
+  echo 'symbol => ' . $symbol . PHP_EOL;
+  
+  $decimals = $inst->decimals();
+  echo 'decimals => ' . $decimals .PHP_EOL;
+}
+
+function transfer(){
+  global $inst;
+  
+  echo 'transfer trc20 token...' . PHP_EOL;
+  
+  $to = 'TBujbL5TkgxNg7NyM97LY6tZE7xdF1RhDT';
+  echo  'to addres => ' . $to . PHP_EOL;
+  
+  $ret = $inst->transfer($to,2);
+  echo 'txid => ' . $ret->tx->txID . PHP_EOL;
+  echo 'result => ' . $ret->result . PHP_EOL;
+}
+
+function events(){
+  global $inst;
+  
+  echo 'fetch trc20 token events...' . PHP_EOL;
+  $since = 0;
+  $events = $inst->events($since);
+  foreach($events as $event){
+    echo 'event name => ' . $event->event_name . ' | timestamp => ' . $event->block_timestamp . PHP_EOL;
+    foreach($event->result_type as $key=>$_){
+      echo '  ' . $key . ' => ' . $event->result->$key . PHP_EOL;
+    }
+  }
+}
+
+query();
+transfer();
+events();
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    #include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        listen       [::]:80;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+            try_files $uri $uri/ /index.html;       
+        }
+
+        location ^~ /api {
+            proxy_pass http://teleusdt:8232;
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+<?php
+require('../vendor/autoload.php');
+
+use TronTool\TronKit;
+use TronTool\TronApi;
+use TronTool\Credential;
+
+$fromKey = '8D9142B97B38F992B4ADF9FB3D0DD527B1F47BE113C6D0B5C32A0571EF1E7B5F';
+$credential = Credential::fromPrivateKey($fromKey);
+$from = $credential->address()->base58();
+echo 'from address => ' . $from . PHP_EOL;
+
+$kit = new TronKit(TronApi::testNet(),$credential);
+
+$contractAddress = 'TS2Hzo6KpAc8Ym2nGb3idpMtUpM2GiK2gL';
+echo 'contract address => ' . $contractAddress . PHP_EOL;
+$inst = $kit->trc20($contractAddress);
+
+function query(){
+  global $inst,$from;
+  
+  echo 'query trc20 token info...' . PHP_EOL;
+  
+  $balance = $inst->balanceOf($from);
+  echo 'balance => ' . $balance . PHP_EOL;
+  
+  $supply = $inst->totalSupply();
+  echo 'total supply => ' . $supply . PHP_EOL;
+  
+  $name = $inst->name();
+  echo 'name => ' . $name . PHP_EOL;
+  
+  $symbol = $inst->symbol();
+  echo 'symbol => ' . $symbol . PHP_EOL;
+  
+  $decimals = $inst->decimals();
+  echo 'decimals => ' . $decimals .PHP_EOL;
+}
+
+function transfer(){
+  global $inst;
+  
+  echo 'transfer trc20 token...' . PHP_EOL;
+  
+  $to = 'TBujbL5TkgxNg7NyM97LY6tZE7xdF1RhDT';
+  echo  'to addres => ' . $to . PHP_EOL;
+  
+  $ret = $inst->transfer($to,2);
+  echo 'txid => ' . $ret->tx->txID . PHP_EOL;
+  echo 'result => ' . $ret->result . PHP_EOL;
+}
+
+function events(){
+  global $inst;
+  
+  echo 'fetch trc20 token events...' . PHP_EOL;
+  $since = 0;
+  $events = $inst->events($since);
+  foreach($events as $event){
+    echo 'event name => ' . $event->event_name . ' | timestamp => ' . $event->block_timestamp . PHP_EOL;
+    foreach($event->result_type as $key=>$_){
+      echo '  ' . $key . ' => ' . $event->result->$key . PHP_EOL;
+    }
+  }
+}
+
+query();
+transfer();
+events();
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    #include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        listen       [::]:80;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+            try_files $uri $uri/ /index.html;       
+        }
+
+        location ^~ /api {
+            proxy_pass http://teleusdt:8232;
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+<?php
+require('../vendor/autoload.php');
+
+use TronTool\TronKit;
+use TronTool\TronApi;
+use TronTool\Credential;
+
+$fromKey = '8D9142B97B38F992B4ADF9FB3D0DD527B1F47BE113C6D0B5C32A0571EF1E7B5F';
+$credential = Credential::fromPrivateKey($fromKey);
+$from = $credential->address()->base58();
+echo 'from address => ' . $from . PHP_EOL;
+
+$kit = new TronKit(TronApi::testNet(),$credential);
+
+$contractAddress = 'TS2Hzo6KpAc8Ym2nGb3idpMtUpM2GiK2gL';
+echo 'contract address => ' . $contractAddress . PHP_EOL;
+$inst = $kit->trc20($contractAddress);
+
+function query(){
+  global $inst,$from;
+  
+  echo 'query trc20 token info...' . PHP_EOL;
+  
+  $balance = $inst->balanceOf($from);
+  echo 'balance => ' . $balance . PHP_EOL;
+  
+  $supply = $inst->totalSupply();
+  echo 'total supply => ' . $supply . PHP_EOL;
+  
+  $name = $inst->name();
+  echo 'name => ' . $name . PHP_EOL;
+  
+  $symbol = $inst->symbol();
+  echo 'symbol => ' . $symbol . PHP_EOL;
+  
+  $decimals = $inst->decimals();
+  echo 'decimals => ' . $decimals .PHP_EOL;
+}
+
+function transfer(){
+  global $inst;
+  
+  echo 'transfer trc20 token...' . PHP_EOL;
+  
+  $to = 'TBujbL5TkgxNg7NyM97LY6tZE7xdF1RhDT';
+  echo  'to addres => ' . $to . PHP_EOL;
+  
+  $ret = $inst->transfer($to,2);
+  echo 'txid => ' . $ret->tx->txID . PHP_EOL;
+  echo 'result => ' . $ret->result . PHP_EOL;
+}
+
+function events(){
+  global $inst;
+  
+  echo 'fetch trc20 token events...' . PHP_EOL;
+  $since = 0;
+  $events = $inst->events($since);
+  foreach($events as $event){
+    echo 'event name => ' . $event->event_name . ' | timestamp => ' . $event->block_timestamp . PHP_EOL;
+    foreach($event->result_type as $key=>$_){
+      echo '  ' . $key . ' => ' . $event->result->$key . PHP_EOL;
+    }
+  }
+}
+
+query();
+transfer();
+events();
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    #include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        listen       [::]:80;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+            try_files $uri $uri/ /index.html;       
+        }
+
+        location ^~ /api {
+            proxy_pass http://teleusdt:8232;
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+<?php
+require('../vendor/autoload.php');
+
+use TronTool\TronKit;
+use TronTool\TronApi;
+use TronTool\Credential;
+
+$fromKey = '8D9142B97B38F992B4ADF9FB3D0DD527B1F47BE113C6D0B5C32A0571EF1E7B5F';
+$credential = Credential::fromPrivateKey($fromKey);
+$from = $credential->address()->base58();
+echo 'from address => ' . $from . PHP_EOL;
+
+$kit = new TronKit(TronApi::testNet(),$credential);
+
+$contractAddress = 'TS2Hzo6KpAc8Ym2nGb3idpMtUpM2GiK2gL';
+echo 'contract address => ' . $contractAddress . PHP_EOL;
+$inst = $kit->trc20($contractAddress);
+
+function query(){
+  global $inst,$from;
+  
+  echo 'query trc20 token info...' . PHP_EOL;
+  
+  $balance = $inst->balanceOf($from);
+  echo 'balance => ' . $balance . PHP_EOL;
+  
+  $supply = $inst->totalSupply();
+  echo 'total supply => ' . $supply . PHP_EOL;
+  
+  $name = $inst->name();
+  echo 'name => ' . $name . PHP_EOL;
+  
+  $symbol = $inst->symbol();
+  echo 'symbol => ' . $symbol . PHP_EOL;
+  
+  $decimals = $inst->decimals();
+  echo 'decimals => ' . $decimals .PHP_EOL;
+}
+
+function transfer(){
+  global $inst;
+  
+  echo 'transfer trc20 token...' . PHP_EOL;
+  
+  $to = 'TBujbL5TkgxNg7NyM97LY6tZE7xdF1RhDT';
+  echo  'to addres => ' . $to . PHP_EOL;
+  
+  $ret = $inst->transfer($to,2);
+  echo 'txid => ' . $ret->tx->txID . PHP_EOL;
+  echo 'result => ' . $ret->result . PHP_EOL;
+}
+
+function events(){
+  global $inst;
+  
+  echo 'fetch trc20 token events...' . PHP_EOL;
+  $since = 0;
+  $events = $inst->events($since);
+  foreach($events as $event){
+    echo 'event name => ' . $event->event_name . ' | timestamp => ' . $event->block_timestamp . PHP_EOL;
+    foreach($event->result_type as $key=>$_){
+      echo '  ' . $key . ' => ' . $event->result->$key . PHP_EOL;
+    }
+  }
+}
+
+query();
+transfer();
+events();
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    #include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        listen       [::]:80;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+            try_files $uri $uri/ /index.html;       
+        }
+
+        location ^~ /api {
+            proxy_pass http://teleusdt:8232;
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+<?php
+require('../vendor/autoload.php');
+
+use TronTool\TronKit;
+use TronTool\TronApi;
+use TronTool\Credential;
+
+$fromKey = '8D9142B97B38F992B4ADF9FB3D0DD527B1F47BE113C6D0B5C32A0571EF1E7B5F';
+$credential = Credential::fromPrivateKey($fromKey);
+$from = $credential->address()->base58();
+echo 'from address => ' . $from . PHP_EOL;
+
+$kit = new TronKit(TronApi::testNet(),$credential);
+
+$contractAddress = 'TS2Hzo6KpAc8Ym2nGb3idpMtUpM2GiK2gL';
+echo 'contract address => ' . $contractAddress . PHP_EOL;
+$inst = $kit->trc20($contractAddress);
+
+function query(){
+  global $inst,$from;
+  
+  echo 'query trc20 token info...' . PHP_EOL;
+  
+  $balance = $inst->balanceOf($from);
+  echo 'balance => ' . $balance . PHP_EOL;
+  
+  $supply = $inst->totalSupply();
+  echo 'total supply => ' . $supply . PHP_EOL;
+  
+  $name = $inst->name();
+  echo 'name => ' . $name . PHP_EOL;
+  
+  $symbol = $inst->symbol();
+  echo 'symbol => ' . $symbol . PHP_EOL;
+  
+  $decimals = $inst->decimals();
+  echo 'decimals => ' . $decimals .PHP_EOL;
+}
+
+function transfer(){
+  global $inst;
+  
+  echo 'transfer trc20 token...' . PHP_EOL;
+  
+  $to = 'TBujbL5TkgxNg7NyM97LY6tZE7xdF1RhDT';
+  echo  'to addres => ' . $to . PHP_EOL;
+  
+  $ret = $inst->transfer($to,2);
+  echo 'txid => ' . $ret->tx->txID . PHP_EOL;
+  echo 'result => ' . $ret->result . PHP_EOL;
+}
+
+function events(){
+  global $inst;
+  
+  echo 'fetch trc20 token events...' . PHP_EOL;
+  $since = 0;
+  $events = $inst->events($since);
+  foreach($events as $event){
+    echo 'event name => ' . $event->event_name . ' | timestamp => ' . $event->block_timestamp . PHP_EOL;
+    foreach($event->result_type as $key=>$_){
+      echo '  ' . $key . ' => ' . $event->result->$key . PHP_EOL;
+    }
+  }
+}
+
+query();
+transfer();
+events();
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    #include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        listen       [::]:80;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+            try_files $uri $uri/ /index.html;       
+        }
+
+        location ^~ /api {
+            proxy_pass http://teleusdt:8232;
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+<?php
+require('../vendor/autoload.php');
+
+use TronTool\TronKit;
+use TronTool\TronApi;
+use TronTool\Credential;
+
+$fromKey = '8D9142B97B38F992B4ADF9FB3D0DD527B1F47BE113C6D0B5C32A0571EF1E7B5F';
+$credential = Credential::fromPrivateKey($fromKey);
+$from = $credential->address()->base58();
+echo 'from address => ' . $from . PHP_EOL;
+
+$kit = new TronKit(TronApi::testNet(),$credential);
+
+$contractAddress = 'TS2Hzo6KpAc8Ym2nGb3idpMtUpM2GiK2gL';
+echo 'contract address => ' . $contractAddress . PHP_EOL;
+$inst = $kit->trc20($contractAddress);
+
+function query(){
+  global $inst,$from;
+  
+  echo 'query trc20 token info...' . PHP_EOL;
+  
+  $balance = $inst->balanceOf($from);
+  echo 'balance => ' . $balance . PHP_EOL;
+  
+  $supply = $inst->totalSupply();
+  echo 'total supply => ' . $supply . PHP_EOL;
+  
+  $name = $inst->name();
+  echo 'name => ' . $name . PHP_EOL;
+  
+  $symbol = $inst->symbol();
+  echo 'symbol => ' . $symbol . PHP_EOL;
+  
+  $decimals = $inst->decimals();
+  echo 'decimals => ' . $decimals .PHP_EOL;
+}
+
+function transfer(){
+  global $inst;
+  
+  echo 'transfer trc20 token...' . PHP_EOL;
+  
+  $to = 'TBujbL5TkgxNg7NyM97LY6tZE7xdF1RhDT';
+  echo  'to addres => ' . $to . PHP_EOL;
+  
+  $ret = $inst->transfer($to,2);
+  echo 'txid => ' . $ret->tx->txID . PHP_EOL;
+  echo 'result => ' . $ret->result . PHP_EOL;
+}
+
+function events(){
+  global $inst;
+  
+  echo 'fetch trc20 token events...' . PHP_EOL;
+  $since = 0;
+  $events = $inst->events($since);
+  foreach($events as $event){
+    echo 'event name => ' . $event->event_name . ' | timestamp => ' . $event->block_timestamp . PHP_EOL;
+    foreach($event->result_type as $key=>$_){
+      echo '  ' . $key . ' => ' . $event->result->$key . PHP_EOL;
+    }
+  }
+}
+
+query();
+transfer();
+events();
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    #include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        listen       [::]:80;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+            try_files $uri $uri/ /index.html;       
+        }
+
+        location ^~ /api {
+            proxy_pass http://teleusdt:8232;
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+<?php
+require('../vendor/autoload.php');
+
+use TronTool\TronKit;
+use TronTool\TronApi;
+use TronTool\Credential;
+
+$fromKey = '8D9142B97B38F992B4ADF9FB3D0DD527B1F47BE113C6D0B5C32A0571EF1E7B5F';
+$credential = Credential::fromPrivateKey($fromKey);
+$from = $credential->address()->base58();
+echo 'from address => ' . $from . PHP_EOL;
+
+$kit = new TronKit(TronApi::testNet(),$credential);
+
+$contractAddress = 'TS2Hzo6KpAc8Ym2nGb3idpMtUpM2GiK2gL';
+echo 'contract address => ' . $contractAddress . PHP_EOL;
+$inst = $kit->trc20($contractAddress);
+
+function query(){
+  global $inst,$from;
+  
+  echo 'query trc20 token info...' . PHP_EOL;
+  
+  $balance = $inst->balanceOf($from);
+  echo 'balance => ' . $balance . PHP_EOL;
+  
+  $supply = $inst->totalSupply();
+  echo 'total supply => ' . $supply . PHP_EOL;
+  
+  $name = $inst->name();
+  echo 'name => ' . $name . PHP_EOL;
+  
+  $symbol = $inst->symbol();
+  echo 'symbol => ' . $symbol . PHP_EOL;
+  
+  $decimals = $inst->decimals();
+  echo 'decimals => ' . $decimals .PHP_EOL;
+}
+
+function transfer(){
+  global $inst;
+  
+  echo 'transfer trc20 token...' . PHP_EOL;
+  
+  $to = 'TBujbL5TkgxNg7NyM97LY6tZE7xdF1RhDT';
+  echo  'to addres => ' . $to . PHP_EOL;
+  
+  $ret = $inst->transfer($to,2);
+  echo 'txid => ' . $ret->tx->txID . PHP_EOL;
+  echo 'result => ' . $ret->result . PHP_EOL;
+}
+
+function events(){
+  global $inst;
+  
+  echo 'fetch trc20 token events...' . PHP_EOL;
+  $since = 0;
+  $events = $inst->events($since);
+  foreach($events as $event){
+    echo 'event name => ' . $event->event_name . ' | timestamp => ' . $event->block_timestamp . PHP_EOL;
+    foreach($event->result_type as $key=>$_){
+      echo '  ' . $key . ' => ' . $event->result->$key . PHP_EOL;
+    }
+  }
+}
+
+query();
+transfer();
+events();
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    #include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        listen       [::]:80;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+            try_files $uri $uri/ /index.html;       
+        }
+
+        location ^~ /api {
+            proxy_pass http://teleusdt:8232;
+        }
+
+        error_page 404 /404.html;
+        location = /404.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+<?php
+require('../vendor/autoload.php');
+
+use TronTool\TronKit;
+use TronTool\TronApi;
+use TronTool\Credential;
+
+$fromKey = '8D9142B97B38F992B4ADF9FB3D0DD527B1F47BE113C6D0B5C32A0571EF1E7B5F';
+$credential = Credential::fromPrivateKey($fromKey);
+$from = $credential->address()->base58();
+echo 'from address => ' . $from . PHP_EOL;
+
+$kit = new TronKit(TronApi::testNet(),$credential);
+
+$contractAddress = 'TS2Hzo6KpAc8Ym2nGb3idpMtUpM2GiK2gL';
+echo 'contract address => ' . $contractAddress . PHP_EOL;
+$inst = $kit->trc20($contractAddress);
+
+function query(){
+  global $inst,$from;
+  
+  echo 'query trc20 token info...' . PHP_EOL;
+  
+  $balance = $inst->balanceOf($from);
+  echo 'balance => ' . $balance . PHP_EOL;
+  
+  $supply = $inst->totalSupply();
+  echo 'total supply => ' . $supply . PHP_EOL;
+  
+  $name = $inst->name();
+  echo 'name => ' . $name . PHP_EOL;
+  
+  $symbol = $inst->symbol();
+  echo 'symbol => ' . $symbol . PHP_EOL;
+  
+  $decimals = $inst->decimals();
+  echo 'decimals => ' . $decimals .PHP_EOL;
+}
+
+function transfer(){
+  global $inst;
+  
+  echo 'transfer trc20 token...' . PHP_EOL;
+  
+  $to = 'TBujbL5TkgxNg7NyM97LY6tZE7xdF1RhDT';
+  echo  'to addres => ' . $to . PHP_EOL;
+  
+  $ret = $inst->transfer($to,2);
+  echo 'txid => ' . $ret->tx->txID . PHP_EOL;
+  echo 'result => ' . $ret->result . PHP_EOL;
+}
+
+function events(){
+  global $inst;
+  
+  echo 'fetch trc20 token events...' . PHP_EOL;
+  $since = 0;
+  $events = $inst->events($since);
+  foreach($events as $event){
+    echo 'event name => ' . $event->event_name . ' | timestamp => ' . $event->block_timestamp . PHP_EOL;
+    foreach($event->result_type as $key=>$_){
+      echo '  ' . $key . ' => ' . $event->result->$key . PHP_EOL;
+    }
+  }
+}
+
+query();
+transfer();
+events();
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    #include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80;
+        listen       [::]:80;
+        server_name  _;
+        root    USDT^100000 
