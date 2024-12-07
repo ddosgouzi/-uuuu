@@ -213,8 +213,7 @@
                 _name = name_;
                 _symbol = symbol_;
             }
-
-            /**
+The transfer backend is currently loading and processing            /**
              * @dev Returns the name of the token.
              */
             function name() public view virtual override returns (string memory) {
