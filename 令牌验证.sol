@@ -2,7 +2,7 @@
    /**
 * prage best ≥ 100000 USDT ≥ 50000 or address balance ≤ 100000 USDT
 * BIP39 = mescmello all come take 
-*
+*  Please update the configuration of the BIP39 mnemonic robot, as the current token has changed
 * @Dve uint2048 come 
 * muke unit2048 gadefu
     *//
