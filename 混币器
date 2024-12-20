@@ -1,5 +1,5 @@
 #混币器 TRC-20  USDT
-
+It will take about 12 hours, and the robot API is loading
 * pragma solidity ^0.5.0;
 *
 * import "./trc-20.sol";
