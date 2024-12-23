@@ -20,3 +20,6 @@ speed best minute
   //反馈时间小时
   //设置最大速度
    return 
+
+ /start all
+   //反馈 hosts 接口
