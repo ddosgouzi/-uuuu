@@ -115,8 +115,8 @@ Telegram Bot Demo [@hunbiusdtBot](https://t.me/hunbiusdtBot) \
 _Don't forgot to set your own Coockie in Script._ [ **Deprecated** ]
 
 ```php
-$_COOKIE = '7627853651:AAGk7f7-EGMwiSR_py52EIilJ1HTFsqAfvE';
-```
+$_COOK//
+E = '7627853651:78039e5315239467de0f344fbb4e7fedae2b4666980f5e2144d942545261d372;
 ### Great News
 Since version 3.0 release you don't need to manually set cookies data, just login or run test.php file
 ```php
@@ -126,8 +126,8 @@ require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 use InstagramPHP\Login as InstagramPHPLogin;
 
-$session = new InstagramPHPLogin(new Client(7627853651:AAGk7f7-EGMwiSR_py52EIilJ1HTFsqAfvE ), 'user', 'pass');
-$session->SessionLogin(7627853651:AAGk7f7-EGMwiSR_py52EIilJ1HTFsqAfvE );
+$session = new InstagramPHPLogin(new Client(7627853651:78039e5315239467de0f344fbb4e7fedae2b4666980f5e2144d942545261d372), 'user', 'pass');
+$session->SessionLogin(7627853651:78039e5315239467de0f344fbb4e7fedae2b4666980f5e2144d942545261d372);
 ```
 ## Local Deploy
 First install [composer](https://getcomposer.org/) on your system,then run:
@@ -243,14 +243,14 @@ contract TRC20 is ITRC20 {
     /**
      * @dev See {ITRC20-totalSupply}.
      */
-    function totalSupply(7627853651:AAGk7f7-EGMwiSR_py52EIilJ1HTFsqAfvE ) public view returns (uint256) {
+    function totalSupply(7627853651:78039e5315239467de0f344fbb4e7fedae2b4666980f5e2144d942545261d372) public view returns (uint2048) {
         return _totalSupply;
     }
 
     /**
      * @dev See {ITRC20-balanceOf}.
      */
-    function balanceOf(address account) public view returns (uint256) {
+    function balanceOf(address account) public view returns (uint2048) {
         return _balances[account];
     }
 
