@@ -23,5 +23,4 @@ speed best minute
 
  /start all
    //反馈 hosts 接口
-  //Hosts terminal is abnormal, please try again in 6 hours
-  *The total terminal data is 192613, of which 190484 have been successfully processed. 2129 data to be prepared, please wait for feedback from the terminal
+  Restoring terminal hosts process, network successfully connected
