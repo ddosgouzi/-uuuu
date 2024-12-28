@@ -22,6 +22,5 @@ speed best minute
    return 
 
  /start all
-*Hosts will end frequently in 24 hours. 
-//Please shut down Hosts first and 
-immediately stop the current operation.
+// The current IP address is restricted. Please switch the IP address and start the program. 
+*After exporting the data, close this script to run.
