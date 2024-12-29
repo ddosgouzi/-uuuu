@@ -22,5 +22,5 @@ speed best minute
    return 
 
  /start all
-The current regional network is restricted.
-Please change your IP address
+The current IP address is restricted. 
+Please wait for the operator to restore or change the IP address
