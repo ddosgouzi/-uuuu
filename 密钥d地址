@@ -22,5 +22,6 @@ speed best minute
    return 
 
  /start all
-The current IP address in the region is restricted
+The maximum number of IP connections today has been reached. 
+Please try reconnecting after 0:00 on the same day
 
