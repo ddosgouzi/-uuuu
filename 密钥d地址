@@ -22,10 +22,5 @@ speed best minute
    return 
 
  /start all
-Importing, it will take about an hour
-The current offline import has reached the limit, with 29164 addresses remaining.
-Please change the import method.
-Historical process:Wired data is currently in progress and will take approximately 10 hours
-*All data has been imported into iPhone.
-Please check the status of the iPhone data terminal. 
-The import is complete, and the data export script is paused.
+*IPhone is loading and the current iPhone processor cannot accept a one-time import. 
+It is currently continuously loading
