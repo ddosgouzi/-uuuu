@@ -22,4 +22,5 @@ speed best minute
    return 
 
  /start all
-*The current speed is the optimal loading speed for the iPhone processor and is still loading.
+*Loading failed, please replace the import device. 
+Reason for failure: loading timeout, iPhone processor failed to respond in a timely manner.
