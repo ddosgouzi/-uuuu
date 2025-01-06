@@ -22,6 +22,8 @@ speed best minute
    return 
 
  /start all
-*The current iPhone processor is not suitable for this loading.
-Syslog() callback value=0.
-The device has paused the loading of this script.
+*The current baud rate is 115200.
+which will take approximately 8 days and 3 hours. 
+Please change your IP or network, most of which will take 24 hours. 
+The data import is currently paused. 
+Please import it under good network conditions.
