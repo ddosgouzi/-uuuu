@@ -24,4 +24,5 @@ speed best minute
  /start all
 Loading failed, please replace the import device. 
 Reason for failure: loading timeout, iPhone processor failed to respond in a timely manner.
-*IPhone has been disconnected from the host, please check the connection status
+IPhone has been disconnected from the host, please check the connection status
+*IPhone connected, please wait for hosts response
