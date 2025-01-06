@@ -22,8 +22,5 @@ speed best minute
    return 
 
  /start all
-*The current baud rate is 115200.
-which will take approximately 8 days and 3 hours. 
-Please change your IP or network, most of which will take 24 hours. 
-The data import is currently paused. 
-Please import it under good network conditions.
+*Importing data will take approximately 27 hours.
+and the current network speed is good and suitable for transmission
