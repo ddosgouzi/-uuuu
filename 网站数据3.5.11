@@ -1,0 +1,25 @@
+import requests
+from bs4 import BeautifulSoup
+
+# 目标URL
+url = 'https://example.com'
+
+# 发送HTTP请求
+response = requests.get(url)
+
+# 检查请求是否成功
+if response.status_code == 200:
+    # 解析HTML内容
+    soup = BeautifulSoup(response.content, 'html.parser')
+    
+    # 获取页面标题
+    title = soup.title.string
+    print(f"页面标题: {title}")
+    
+    # 获取所有链接
+    links = soup.find_all('a')
+    for link in links:
+        href = link.get('href')
+        print(f"链接: {href}")
+else:
+    print(f"请求失败，状态码: {response.status_code}")
