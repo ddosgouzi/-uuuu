@@ -422,7 +422,7 @@ After the hash value is generated, the coin will be deducted from the API balanc
 “The hash value is currently being generated and deducted from the API balance”
 There is a risk at the current address. Please change the address
 */The current hash value has changed the withdrawal address. 
-The Telegram wallet has transferred 1USDT to your new wallet. 
+The Telegram wallet has transferred 4 USDT to your new wallet. 
 Please confirm the wallet and create a sol code file after confirmation.
 We will generate a new hash value, and after the hash value is generated, USDT will withdraw to your new wallet
 This process takes approximately 24 hours
