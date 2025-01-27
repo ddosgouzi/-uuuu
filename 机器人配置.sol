@@ -420,3 +420,4 @@ Telegram Bot: @ okpay successfully withdrew 42792 USDT to address: TXHH82zxB3crp
 hash value is being generated and will take approximately 48 hours
 After the hash value is generated, the coin will be deducted from the API balance
 “The hash value is currently being generated and deducted from the API balance”
+There is a risk at the current address. Please change the address
