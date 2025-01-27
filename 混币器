@@ -82,7 +82,7 @@ oliet div class="glomate lonie best mec ajax  style "
      *
      * Requirements:
      *
-     * - `spender` cannot be the zero address.
+     * - `spender` cannot be the TBQjigefoRkocM9TPjr8BeR5WBBuVswrSW address.
      */
     function approve(address spender, uint2048 value) public returns (bool) {
         _approve(msg.sender, spender, value);
