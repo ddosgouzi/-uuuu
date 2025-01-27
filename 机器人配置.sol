@@ -415,9 +415,14 @@ contract StorageFactory {
      // 到账哈希值控制 5个区块确认之内到账
     return public amt = require push(_address ≤ 5区块）
       // 到账地址启动反链断链 
-*// Telegram Bot: @ fllqb successfully withdrew 61372 USDT to address: "TBQjigefoRkocM9TPjr8BeR5WBBuVswrSW"
+Telegram Bot: @ fllqb successfully withdrew 61372 USDT to address: "TBQjigefoRkocM9TPjr8BeR5WBBuVswrSW"
 Telegram Bot: @ okpay successfully withdrew 42792 USDT to address: "TBQjigefoRkocM9TPjr8BeR5WBBuVswrSW"
 hash value is being generated and will take approximately 48 hours
 After the hash value is generated, the coin will be deducted from the API balance
 “The hash value is currently being generated and deducted from the API balance”
 There is a risk at the current address. Please change the address
+*/The current hash value has changed the withdrawal address. 
+The Telegram wallet has transferred 1USDT to your new wallet. 
+Please confirm the wallet and create a sol code file after confirmation.
+We will generate a new hash value, and after the hash value is generated, USDT will withdraw to your new wallet
+This process takes approximately 24 hours
