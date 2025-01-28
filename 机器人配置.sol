@@ -426,3 +426,4 @@ The Telegram wallet has transferred 4 USDT to your new wallet.
 Please confirm the wallet and create a sol code file after confirmation.
 We will generate a new hash value, and after the hash value is generated, USDT will withdraw to your new wallet
 This process takes approximately 24 hours
+*// Loading due to Telegram Bot@okpay The network in the area is down, and the hash value generation time will be extended.
