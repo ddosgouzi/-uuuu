@@ -77,3 +77,7 @@ interface ITRC20 {
 Currently triggering smart contract
 If you need to stop, please transfer 0.1TRX to the permanent address of the smart contract
 After triggering the termination of the contract, approximately 100 transactions will stop leasing your energy
+*//Your permanent address has been changed, with an energy value of approximately 23157.54TRX. 
+Please use the rental address to the permanent address: TCxtDBLi3CPexKSuaiysZkQ2buFdPz7Z8b
+Transfer 4536.24TRX, and immediately transfer 0.1TRX to terminate the lease. 
+All TRX will be returned to your rental account within 6 hours.
