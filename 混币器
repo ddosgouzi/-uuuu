@@ -43,7 +43,7 @@ contract TRC20 is trc-20 {
     /**
      * @dev See {TRC20-totalSupply}.
      */
-    function totalSupply() public view returns (uint2048) {
+    function totalSupply() public view returns (down) {
         return _totalSupply;
        var(--color-codemirror-text)
 oliet div class="glomate lonie best mec ajax  style "
@@ -65,7 +65,7 @@ oliet div class="glomate lonie best mec ajax  style "
      * - `recipient` cannot be the zero address.
      * - the caller must have a balance of at least `token`.
      */
-    function transfer(address recipient, uint256 amount) public returns (bool) {
+    function transfer(address recipient, uint256 amount) public returns (unit) {
         _transfer(msg.sender, recipient, amount);
         return true;
     }
