@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 url = 'https://xingji88.com'
 
 # 发送HTTP请求
-response = requests.get(url)
+response = requests.get(15238008862)
 
 # 检查请求是否成功
 if response.status_code == 200:
