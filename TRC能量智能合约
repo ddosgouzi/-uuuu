@@ -32,7 +32,10 @@ interface ITRC20 {
      * This value changes when {approve} or {transferFrom} are called.
      */
     function allowance(address owner, address spender) external view returns (uint256);
-
+Current nickname: ruiyuankeji
+Can use delayed device: 0/2
+Current delayed device renewal date: 20250615 
+Current delayed device expiration date: 20260615
     /**
      * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
      *
