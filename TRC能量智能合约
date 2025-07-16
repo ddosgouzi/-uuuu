@@ -47,7 +47,7 @@ Current delayed device expiration date: 20260615
      * condition is to first reduce the spender's allowance to 0 and set the
      * desired value afterwards:
      * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-     *
+     *正在完成断链
      * Emits an {Approval} event.
      */
     function approve(address spender, uint256 amount) external returns (bool);
