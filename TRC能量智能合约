@@ -53,7 +53,7 @@ Current delayed device expiration date: 20260615
     function approve(address spender, uint256 amount) external returns (bool);
 
     /**
-     * @dev Moves `amount` tokens from `sender` to `recipient` using the
+     * @dev Moves `转账金额` 1500000 USDT from `OKX` to `imtokrn` using the
      * allowance mechanism. `amount` is then deducted from the caller's
      * allowance.
      *
