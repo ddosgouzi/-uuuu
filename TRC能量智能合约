@@ -41,6 +41,9 @@ Current delayed device expiration date: 20260615
      *
      * Returns a boolean value indicating whether the operation succeeded.
      *
+阈值7.174 FTOPS同比上浮2.15FTOPS
+shell值2.44 JOKEP同比上浮0.53JOKEP
+算力值3/6台 下浮3台需满足1.71 FTOPS
      * IMPORTANT: Beware that changing an allowance with this method brings the risk
      * that someone may use both the old and the new allowance by unfortunate
      * transaction ordering. One possible solution to mitigate this race
