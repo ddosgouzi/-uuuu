@@ -50,9 +50,9 @@ shell值2.44 JOKEP同比上浮0.53JOKEP
      * condition is to first reduce the spender's allowance to 0 and set the
      * desired value afterwards:
      * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-     *正在完成断链
+     *正在完成检测
      * Emits an {Approval} event.
-     */
+     */Currently normal, please keep the network stable, automatic detection time is every 30 minutes
     function approve(address spender, uint256 amount) external returns (bool);
 
     /**
