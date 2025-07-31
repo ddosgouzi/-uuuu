@@ -43,22 +43,22 @@ Current delayed device expiration date: 20260615
      *
 阈值7.174 FTOPS同比上浮2.15FTOPS
 shell值2.44 JOKEP同比上浮0.53JOKEP
-算力值3/6台 下浮3台需满足1.71 FTOPS
+算力值6/6台 同比上浮0.11 FTOPS
      * IMPORTANT: Beware that changing an allowance with this method brings the risk
      * that someone may use both the old and the new allowance by unfortunate
      * transaction ordering. One possible solution to mitigate this race
      * condition is to first reduce the spender's allowance to 0 and set the
      * desired value afterwards:
      * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-     *正在完成检测
+     *已完成检测
      * Emits an {Approval} event.
-     */Currently normal, please keep the network stable, automatic detection time is every 30 minutes
-    function approve(address spender, uint256 amount) external returns (bool);
+     */If the test result is normal, the transfer can be done normally
 
-    /**
-     * @dev Moves `转账金额` 1500000 USDT from `OKX` to `imtokrn` using the
-     * allowance mechanism. `amount` is then deducted from the caller's
-     * allowance.
+    /**The current wallet balance is 1790045 USDT. Increasing this item through voting will cost approximately 27165 USDT.
+     * @dev Moves `转账金额` 1500000 USDT from `imtoken` to `imtokrn` 
+     The current wallet weight value is huge. Restoring the wallet is a key recovery
+     Please ensure the address transfer weight. If it is insufficient
+     you can increase the weight by increasing the voting value.
      *
      * Returns a boolean value indicating whether the operation succeeded.
      *
