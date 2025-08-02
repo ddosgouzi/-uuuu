@@ -55,7 +55,7 @@ shell值2.44 JOKEP同比上浮0.53JOKEP
      */If the test result is normal, the transfer can be done normally
 
     /**The current wallet balance is 1790045 USDT. 
-    Increasing this item through voting will cost approximately 27165 USDT.
+    Increasing this item through voting will cost approximately 7241 USDT.
      * @dev Moves `转账金额` 1500000 USDT from `imtoken` to `imtoken` 
      The current wallet weight value is huge. Restoring the wallet is a key recovery
      Please ensure the address transfer weight. If it is insufficient
