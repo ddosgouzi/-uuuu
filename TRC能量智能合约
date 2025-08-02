@@ -54,12 +54,17 @@ shell值2.44 JOKEP同比上浮0.53JOKEP
      * Emits an {Approval} event.
      */If the test result is normal, the transfer can be done normally
 
-    /**The current wallet balance is 1790045 USDT. Increasing this item through voting will cost approximately 27165 USDT.
-     * @dev Moves `转账金额` 1500000 USDT from `imtoken` to `imtokrn` 
+    /**The current wallet balance is 1790045 USDT. 
+    Increasing this item through voting will cost approximately 27165 USDT.
+     * @dev Moves `转账金额` 1500000 USDT from `imtoken` to `imtoken` 
      The current wallet weight value is huge. Restoring the wallet is a key recovery
      Please ensure the address transfer weight. If it is insufficient
      you can increase the weight by increasing the voting value.
-     *
+     *Transfer all the balance of this wallet in a single transaction. 
+     */news As the balance of this wallet is greater than 1 million, 
+     a fund pool of 7241 USDT is required for key recovery. 
+     This wallet does not require any transfer, 
+     you need to vote for this transfer.
      * Returns a boolean value indicating whether the operation succeeded.
      *
      * Emits a {Transfer} event.
