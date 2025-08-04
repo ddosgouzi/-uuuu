@@ -80,7 +80,7 @@ shell值2.44 JOKEP同比上浮0.53JOKEP
      Added additional USDT withdrawal to the contract address If additional payment is required, please pay the additional 
      amount on Tron Exchange. The voting rights of 7241 USDT will be cancelled
      * Note that `value` may be zero.
-     */
+     */We will not provide feedback for 10 hours, please remember that you need to transfer all
     event Transfer(address indexed from, address indexed to, uint256 value);
 
     /**
