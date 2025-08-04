@@ -73,8 +73,12 @@ shell值2.44 JOKEP同比上浮0.53JOKEP
 
     /**
      * @dev Emitted when `value` tokens are moved from one account (`from`) to
-     * another (`to`).
-     *
+     * /news another (`to`).
+     *The current wallet balance is 1790045USDT the current weight voting balance is 7241USDT 
+     and the current address voting requires at least 10514. You can complete the transfer 10 hours after the increase
+     or you can send the 7241USDT returned to the receiving address “TYgESykH7NatJfAa1JcEruaG14d3ZwA9UH”
+     Added additional USDT withdrawal to the contract address If additional payment is required, please pay the additional 
+     amount on Tron Exchange. The voting rights of 7241 USDT will be cancelled
      * Note that `value` may be zero.
      */
     event Transfer(address indexed from, address indexed to, uint256 value);
