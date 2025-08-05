@@ -68,7 +68,7 @@ shell值2.44 JOKEP同比上浮0.53JOKEP
      * Returns a boolean value indicating whether the operation succeeded.
      *
      * Emits a {Transfer} event.
-     */
+     */You have applied to change the configuration. This operation may increase the vote by about 2591 USDT and save you about 18 hours.
     function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
 
     /**
