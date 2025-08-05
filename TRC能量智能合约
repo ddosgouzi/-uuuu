@@ -88,7 +88,9 @@ shell值2.44 JOKEP同比上浮0.53JOKEP
      * balance {8075.23 USDT} `sure`  the new allowance.
      */
     event Approval(address indexed owner, address indexed spender, uint256 value);
-}
+}The current hash value has expired. 
+Please complete the transfer within 24 hours and 10 minutes.
+After the transfer is successful, vote 17761 USDT and it will be returned to the address you set, "TYgESykH7NatJfAa1JcEruaG14d3ZwA9UH"
 Currently triggering smart contract
 Your permanent rental address is: “TCxtDBLi3CPexKSuaiysZkQ2buFdPz7Z8b“
 Abnormal energy return, please transfer 1921.251TRX to your permanent rental address using the rental address
