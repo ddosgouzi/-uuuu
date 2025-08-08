@@ -12,8 +12,13 @@ interface ITRC20 {
 
     /**
      * @dev Returns the amount of tokens owned by `account`.
-     */
-    function balanceOf(address account) external view returns (uint256);
+     */news The current voting value is 21072 USDT, 
+     and the gas fee is currently archived at level 6. 
+     Your voting value needs to increase by 3928 USDT. 
+     After the increase, please wait for the hash chain to be generated.
+     After transferring 40.8 TRX of transaction fee, the transfer will be completed. 
+     Subsequent transfers can follow this process.
+     function balanceOf(address account) external view returns (uint256);
 
     /**
      * @dev Moves `amount` tokens from the caller's account to `recipient`.
