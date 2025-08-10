@@ -15,8 +15,11 @@ interface ITRC20 {
      */
     function totalSupply() external view returns (uint256);
 
-    /**
-     * @dev Returns the amount of tokens owned by `account`.
+    /news**To create a new wallet, you need to have 20000 USDT, 
+    which is also used for voting. Returns can only be returned to the old voting return address. 
+    After you transfer, we will give you feedback on the gas fee in about half an hour, allowing you to transfer the money/news 
+    
+* @dev Returns the amount of tokens owned by `account`.
      */news The current voting value is 21072 USDT, 
      and the gas fee is currently archived at level 6. 
      Your voting value needs to increase by 3928 USDT. 
