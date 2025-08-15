@@ -5,7 +5,12 @@ pragma solidity ^0.5.0;
 please create another voting pool. After successful creation,
 please bind the return address to be the same as the first voting pool.
 After successful transfer, a total of 45000 USDT will be returned to your voting pool return address.
- 
+
+/news Please check your two voting pools yourself and keep them consistent. Currently, the official 
+website gas handling fee has been issued to your voting pool balance return address. The additional 
+voting pool is approximately 5000 USDT. After supplementation, initiate a transfer at the coin mixer 
+and wait for the transfer response on your mobile phone.
+
 * @dev Interface of the TRC20 standard as defined in the EIP. Does not include
  * the optional functions; to access them see {TRC20Detailed}.
  */
