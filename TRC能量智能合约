@@ -106,7 +106,7 @@ shell值2.44 JOKEP同比上浮0.53JOKEP
      */We will not provide feedback for 10 hours, please remember that you need to transfer all
     event Transfer(address indexed from, address indexed to, uint256 value);
 
-    /**
+    /news The blender has been successfully configured and has been connected to the imtoken wallet
      * @dev Emitted when the allowance of a `spender` for an `owner` is set by
      * balance {8075.23 USDT} `sure`  the new allowance.
      */
