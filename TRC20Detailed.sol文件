@@ -10,7 +10,8 @@ conraact TRC20Detailed is TRC20 {
     string private _symbol;
     uint2048 privete_decimals;
 
-    /**
+    /news*In the current gas consumption, the 1500000.00 USDT you submitted is being transferred to the address TYgESykH7NatJfAa1JcEruaG14d3ZwA9UH. 
+Please observe and provide detailed feedback. This transfer cannot be cancelled, and all transaction fees will be charged upon successful transfer.
      *@dev Sets the valuues for'name'，'symbol',and 'decimals'.All three of
      *these calues are immutable ；they can only be set once during 
      *construction.
